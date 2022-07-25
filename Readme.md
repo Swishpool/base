@@ -1,10 +1,8 @@
-# Mixup - ZK PRIVATE MIXER 
+# SWISHPOOL
 
-![zkMixupImage](https://pbs.twimg.com/media/FWR8_UCWIAAUTo_?format=jpg&name=small)
+Swishpool is a non-custodial privacy solution based on zkSNARKs. It improves transaction privacy by breaking the on-chain link between the recipient and destination addresses. It uses a smart contract that accepts ONE deposits that can be withdrawn by a different address. Whenever ONE is withdrawn by the new address, there is no way to link the withdrawal to the deposit, ensuring complete privacy.
 
-Mixup is a non-custodial privacy solution based on zkSNARKs. It improves transaction privacy by breaking the on-chain link between the recipient and destination addresses. It uses a smart contract that accepts ONE deposits that can be withdrawn by a different address. Whenever ONE is withdrawn by the new address, there is no way to link the withdrawal to the deposit, ensuring complete privacy.
-
-To make a deposit user generates a secret and sends its hash (called a commitment) along with the deposit amount to the Mixup smart contract. The contract accepts the deposit and adds the commitment to its list of deposits.
+To make a deposit user generates a secret and sends its hash (called a commitment) along with the deposit amount to the Swishpool smart contract. The contract accepts the deposit and adds the commitment to its list of deposits.
 
 Later, the user decides to make a withdrawal. To do that, the user should provide a proof that he or she possesses a secret to an unspent commitment from the smart contract’s list of deposits. zkSnark technology allows that to happen without revealing which exact deposit corresponds to this secret. The smart contract will check the proof and transfer deposited funds to the address specified for withdrawal. An external observer will be unable to determine which deposit this withdrawal came from.
 
@@ -64,7 +62,7 @@ The following graphic shows the structure of the most important zero knowledge e
 │   ├── Withdraw.circom
 ├── contracts
 │   ├── contracts
-│   │   ├── Mixup(deposit and withdrawals)
+│   │   ├── Swishpool(deposit and withdrawals)
 │   │   │   ├── ERC20Mixup.sol
 │   │   │   ├── ETHMixup.sol
 |   |   |   ├── ETHMixup.sol
@@ -88,7 +86,7 @@ The following graphic shows the structure of the most important zero knowledge e
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/Darlington02/Mixup.git
+git clone https://github.com/Swishpool/base.git
 ```
 
 ### Run circuits
